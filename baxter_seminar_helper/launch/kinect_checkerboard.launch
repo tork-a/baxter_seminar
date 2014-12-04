@@ -1,0 +1,37 @@
+<launch>
+  <arg name="launch_openni" default="true" />
+
+  <include file="$(find openni_launch)/launch/openni.launch"
+           if="$(arg launch_openni)">
+    <arg name="camera" value="openni"/>
+    <arg name="depth_registration" value="true"/>
+  </include>
+
+  <!-- checkerboard -->
+  <group ns="/camera/rgb/" >
+    <!-- <param name="single" value="1" /> -->
+    <param name="display" type="int" value="1" />
+    <param name="rect0_size_x" value="0.030" />
+    <param name="rect0_size_y" value="0.030" />
+    <param name="grid0_size_x" value="6" />
+    <param name="grid0_size_y" value="5" />
+    <param name="type0" value="test_object" />
+
+    <node name="checkerboard_detector" pkg="checkerboard_detector"
+          type="checkerboard_detector">
+      <remap from="image" to="/openni/rgb/image_rect_color" />
+      <remap from="camera_info" to="/openni/rgb/camera_info" />
+    </node>
+
+    <node name="objectdetection_tf_publisher"
+          pkg="baxter_seminar_helper"
+          type="objectdetection_tf_publisher.py" >
+      <param name="latest_publish" value="true"/>
+    </node>
+  </group>
+  <!--  right or left(0.1) / up or down (0.0)/ fornt or back (0.15) -->
+  <node pkg="tf" type="static_transform_publisher" name="base_to_checkerboard" args="0.1 0.0 0.15 0.0 1.5708 1.5708 /object /base 100" />
+  <node pkg="dynamic_tf_publisher" name="tf_publish" type="tf_publish.py"/>
+
+  <!-- end checkerboard  -->
+</launch>
