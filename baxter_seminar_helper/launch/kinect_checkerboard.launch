@@ -3,7 +3,6 @@
 
   <include file="$(find openni_launch)/launch/openni.launch"
            if="$(arg launch_openni)">
-    <arg name="camera" value="openni"/>
     <arg name="depth_registration" value="true"/>
   </include>
 
@@ -19,8 +18,8 @@
 
     <node name="checkerboard_detector" pkg="checkerboard_detector"
           type="checkerboard_detector">
-      <remap from="image" to="/openni/rgb/image_rect_color" />
-      <remap from="camera_info" to="/openni/rgb/camera_info" />
+      <remap from="image" to="/camera/rgb/image_rect_color" />
+      <remap from="camera_info" to="/camera/rgb/camera_info" />
     </node>
 
     <node name="objectdetection_tf_publisher"
