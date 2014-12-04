@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package>
+  <name>baxter_seminar</name>
+  <version>0.0.1</version>
+  <description>The baxter_seminar package</description>
+
+  <author email="kei.okada@gmail.com">Kei Okada</author>
+  <maintainer email="kei.okada@gmail.com">Kei Okada</maintainer>
+  <maintainer email="iiysaito@opensource-robotics.tokyo.jp">Isaac IY Saito</maintainer>
+
+  <license>GPLv3</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <run_depend>baxter_seminar_helper</run_depend>
+
+  <export>
+  </export>
+
+</package>
