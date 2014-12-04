@@ -1,15 +1,30 @@
 <launch>
   <!-- actionlib server for joint and griper -->
-  <node pkg="baxter_interface"
-        type="joint_trajectory_action_server.py"
-        name="joint_trajectory_action_server"
-	output="screen"
-	clear_params="true" />
-  <node pkg="baxter_interface"
-        type="gripper_action_server.py"
-        name="gripper_action_server"
-	output="screen"
-	clear_params="true" />
+  <arg name="sim" default="false" />
+  <group if="$(arg sim)" >
+      <node name="dummy_joint_trajectory_controller"
+            pkg="baxter_seminar_helper"
+            type="joint_trajectory_controller">
+        <remap from="/joint_states" to="/robot/joint_states" />
+      </node>
+      <node name="robot_state_publisher" pkg="robot_state_publisher"
+            type="robot_state_publisher" respawn="true"
+            output="screen" >
+      <remap from="/joint_states" to="/robot/joint_states" />
+    </node>
+  </group>
+  <group unless="$(arg sim)" >
+    <node pkg="baxter_interface"
+          type="joint_trajectory_action_server.py"
+          name="joint_trajectory_action_server"
+	  output="screen"
+	  clear_params="true" />
+    <node pkg="baxter_interface"
+          type="gripper_action_server.py"
+          name="gripper_action_server"
+	  output="screen"
+	  clear_params="true" />
+  </group>
 
   <!-- workaround for roi problem of ar_marker-->
   <include file="$(find baxter_seminar_helper)/launch/camera_info_fixer.launch" />
