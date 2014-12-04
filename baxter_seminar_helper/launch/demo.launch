@@ -2,13 +2,17 @@
   <!-- actionlib server for joint and griper -->
   <node pkg="baxter_interface"
         type="joint_trajectory_action_server.py"
-        name="joint_trajectory_action_server" />
+        name="joint_trajectory_action_server"
+	output="screen"
+	clear_params="true" />
   <node pkg="baxter_interface"
         type="gripper_action_server.py"
-        name="joint_trajectory_action_server.py" />
+        name="gripper_action_server"
+	output="screen"
+	clear_params="true" />
 
   <!-- workaround for roi problem of ar_marker-->
-  <include file="$(baxter_seminar_helper)/launch/camera_info_fixer.launch" />
+  <include file="$(find baxter_seminar_helper)/launch/camera_info_fixer.launch" />
   <node pkg="ar_track_alvar" type="individualMarkersNoKinect"
         name="ar_track"
         args="4.5 0.1 0.1
@@ -16,9 +20,6 @@
               /cameras/right_hand_camera/camera_info_fixed
               /right_hand_camera_axis" />
 
-  <node pkg="baxter_interface"
-        type="gripper_action_server.py"
-        name="joint_trajectory_action_server.py" />
   <include file="$(find baxter_moveit_config)/launch/demo_baxter.launch" />
 
 </launch>
