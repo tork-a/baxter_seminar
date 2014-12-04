@@ -19,7 +19,12 @@
               /cameras/right_hand_camera/image
               /cameras/right_hand_camera/camera_info_fixed
               /right_hand_camera_axis" />
-
+  
   <include file="$(find baxter_moveit_config)/launch/demo_baxter.launch" />
+  <group ns="move_group" >
+    <param name="octomap_frame" type="string" value="head" />
+    <param name="octomap_resolution" type="double" value="0.02" />
+    <rosparam command="load" file="$(find baxter_moveit_config)/config/kinect_sensor.yaml" />
+  </group>
 
 </launch>
