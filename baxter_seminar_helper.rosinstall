@@ -1,0 +1,19 @@
+- git:
+    local-name: baxter_tasker
+    uri: git@dev.humarobotics.com:baxter_tasker
+    version: de9f70f
+- git:
+    local-name: baxter_simulator
+    uri: git@github.com:RethinkRobotics/baxter_simulator.git
+    version: release-0.8.1
+- git:
+    local-name: gazebo_ros_pkgs
+    uri: https://github.com/RethinkRobotics/gazebo_ros_pkgs.git
+    version: release-0.8.0
+- git:
+    local-name: ros_control
+    uri: https://github.com/RethinkRobotics/ros_control.git
+    version: release-0.8.0
+
+
+
