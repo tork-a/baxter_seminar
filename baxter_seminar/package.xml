@@ -13,6 +13,7 @@
   <buildtool_depend>catkin</buildtool_depend>
 
   <run_depend>baxter_seminar_helper</run_depend>
+  <run_depend>jsk_tools</run_depend>
 
   <export>
   </export>
