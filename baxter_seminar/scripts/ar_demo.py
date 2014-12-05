@@ -37,7 +37,7 @@ if __name__ == '__main__':
     group = MoveGroupCommander("right_arm")
     gripper_open()
   
-    pub = rospy.Publisher('target_pose', geometry_msgs.msg.PoseStamped, queue_size=1)
+    pub = rospy.Publisher('target_pose', geometry_msgs.msg.PoseStamped)
     listener = tf.TransformListener()
 
     rate = rospy.Rate(10.0)
