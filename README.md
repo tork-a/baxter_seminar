@@ -13,7 +13,7 @@ cd ~/ros_ws
 wstool init src
 wstool merge -t src https://raw.githubusercontent.com/tork-a/baxter_seminar/master/baxter_seminar.rosinstall
 wstool update -t src
-rosdep install -y -r --from-paths src
+rosdep install -y -r --from-paths src --ignore-src
 catkin_make
 source devel/setup.bash
 ```
@@ -23,7 +23,7 @@ You need to source setup.bash everytime you opened the terminal, For convinicenc
 ```
 cat <<EOF >> ~/.bashrc
 source ~/ros_ws/devel/setup.bash
-source `rospack find baxter_seminar`/seminar.sh
+source `rospack find baxter_seminar_helper`/seminar.sh
 EOF
 ```
 
