@@ -10,10 +10,10 @@
   <group ns="/camera/rgb/" >
     <!-- <param name="single" value="1" /> -->
     <param name="display" type="int" value="1" />
-    <param name="rect0_size_x" value="0.030" />
-    <param name="rect0_size_y" value="0.030" />
-    <param name="grid0_size_x" value="6" />
-    <param name="grid0_size_y" value="5" />
+    <param name="rect0_size_x" value="0.020" />
+    <param name="rect0_size_y" value="0.020" />
+    <param name="grid0_size_x" value="9" />
+    <param name="grid0_size_y" value="6" />
     <param name="type0" value="test_object" />
 
     <node name="checkerboard_detector" pkg="checkerboard_detector"
@@ -29,7 +29,7 @@
     </node>
   </group>
   <!--  right or left(0.1) / up or down (0.0)/ fornt or back (0.15) -->
-  <node pkg="tf" type="static_transform_publisher" name="base_to_checkerboard" args="0.1 0.0 0.15 0.0 1.5708 1.5708 /object /base 100" />
+  <node pkg="tf" type="static_transform_publisher" name="base_to_checkerboard" args="0.080 0.120 0.150 0.0 1.5708 1.5708 /object /base 100" />
   <node pkg="dynamic_tf_publisher" name="tf_publish" type="tf_publish.py"/>
 
   <!-- end checkerboard  -->
