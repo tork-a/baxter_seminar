@@ -33,7 +33,7 @@ def gripper_close():
     gripper_command(0)
 
 if __name__ == '__main__':
-    rospy.init_node('ar_pose_commander')
+    rospy.init_node('ar_pose_commander', anonymous=True)
     group = MoveGroupCommander("right_arm")
     gripper_open()
   
