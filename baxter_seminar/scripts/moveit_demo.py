@@ -6,7 +6,7 @@ import geometry_msgs.msg
 from moveit_commander import MoveGroupCommander
 
 if __name__ == '__main__':
-    rospy.init_node('baxter_commander', anonymous=Tru)
+    rospy.init_node('baxter_commander', anonymous=True)
     group = MoveGroupCommander("right_arm")
   
     # move to a random target
