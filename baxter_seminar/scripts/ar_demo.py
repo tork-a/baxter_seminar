@@ -44,7 +44,8 @@ if __name__ == '__main__':
     pose_st_target = None
     while not rospy.is_shutdown() and not kbhit():
         try:
-            (trans,quat) = listener.lookupTransform('/base', '/ar_marker_11', rospy.Time(0))
+            now = rospy.Time(0)
+            (trans,quat) = listener.lookupTransform('/base', '/ar_marker_4', now)
             quat = quaternion_multiply(quat, quaternion_about_axis(math.pi, (0,1,0))) # rotate pi
             pose_st_target = geometry_msgs.msg.PoseStamped()
             pose_st_target.pose.position.x = trans[0]
@@ -69,7 +70,7 @@ if __name__ == '__main__':
         sys.exit(1)
 
     # move to a way point
-    pose_st_target.pose.position.z += 0.1
+    pose_st_target.pose.position.z += 0.2
     rospy.loginfo("set target to {}".format(pose_st_target.pose))
     group.set_pose_target(pose_st_target.pose)
     plan = group.plan()
