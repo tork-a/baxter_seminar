@@ -6,7 +6,7 @@ source `rospack find jsk_tools`/src/bashrc.ros
 type setrosmaster > /dev/null 2>&1
 if [ $? == 1 ]; then
    function rossetmaster() { # 自分のよく使うロボットのhostnameを入れる
-       local hostname=${1-"baxter-ros"}
+       local hostname=${1-"011402P0006.local"}
        local ros_port=${2-"11311"}
        export ROS_MASTER_URI=http://$hostname:$ros_port
        if [[ "${PS1}" =~ \[http://.*:.*\]\ (.*)$ ]] ; then
@@ -16,6 +16,12 @@ if [ $? == 1 ]; then
        echo -e "\e[1;31mset ROS_MASTER_URI to $ROS_MASTER_URI\e[m"
    }
 fi
+
+for (( i=1; i<=3; i++)) 
+do
+  echo "#${i} ntpdate call";
+  ntpdate -q 011402P0006.local;
+done
 
 rossetip
 
