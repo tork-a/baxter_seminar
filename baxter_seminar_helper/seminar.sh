@@ -8,6 +8,11 @@ do
   rossetmaster 011402P0006.local;
 done
 
+for i in 3
+do 
+  ntpdate -q 011402P0006.local
+done
+
 rossetip
 
 
