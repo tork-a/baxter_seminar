@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <name>baxter_seminar_helper</name>
-  <version>0.0.1</version>
+  <version>0.0.2</version>
   <description>The baxter_seminar_helper package</description>
 
   <author email="kei.okada@gmail.com">Kei Okada</author>
