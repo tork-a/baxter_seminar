@@ -1,17 +1,15 @@
 #!/bin/bash
 
+hostname=${1-"011402P0006.local"}  # BRR at Nihon Binary Coltd
+
 source `rospack find jsk_tools`/src/bashrc.ros
+echo "Set ROS master: ${hostname}";
+rossetmaster ${hostname};
 
 for (( i=1; i<=3; i++)) 
 do
   echo "#${i} ntpdate call";
-  rossetmaster 011402P0006.local;
-done
-
-for i in 3
-do 
-  ntpdate -q 011402P0006.local
-done
+  ntpdate -q ${hostname}
 
 rossetip
 
