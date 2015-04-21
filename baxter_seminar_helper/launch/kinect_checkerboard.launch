@@ -1,9 +1,12 @@
 <launch>
-  <arg name="launch_openni" default="true" />
+  <arg name="launch_openni" default="true" /> <!-- e.g. On Indigo you may want false here http://goo.gl/wtbYWg -->
 
   <include file="$(find openni_launch)/launch/openni.launch"
            if="$(arg launch_openni)">
     <arg name="depth_registration" value="true"/>
+  </include>
+  <include file="$(find freenect_launch)/launch/freenect.launch"
+           unless="$(arg launch_openni)">
   </include>
 
   <!-- checkerboard -->
