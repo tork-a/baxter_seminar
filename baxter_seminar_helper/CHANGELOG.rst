@@ -2,6 +2,13 @@
 Changelog for package baxter_seminar_helper
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* (Fix) Kinect not found issue on Indigo.
+* (Improve) Simpler implementation of seminar.sh (depends fully on jsk_tools 1.0.66 for rosset* commands).
+* (Improve) Call ntpdate brute force for better time sync.
+* Contributors: Isaac IY Saito
+
 0.0.2 (2015-01-29)
 ------------------
 * Call ntpdate brute force. Make seminar.sh executable.

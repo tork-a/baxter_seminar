@@ -1,4 +1,6 @@
 <launch>
+  <arg name="rviz_config" default="$(find baxter_seminar)/launch/seminar.rviz" />
+
   <!-- actionlib server for joint and griper -->
   <arg name="sim" default="false" />
   <group if="$(arg sim)" >
@@ -35,7 +37,10 @@
               /cameras/right_hand_camera/camera_info_fixed
               /right_hand_camera_axis" />
   
-  <include file="$(find baxter_moveit_config)/launch/demo_baxter.launch" />
+  <include file="$(find baxter_moveit_config)/launch/demo_baxter.launch">
+    <arg name="rviz_config" value="$(arg rviz_config)" />
+  </include>
+
   <group ns="move_group" >
     <param name="octomap_frame" type="string" value="head" />
     <param name="octomap_resolution" type="double" value="0.02" />

@@ -2,6 +2,12 @@
 Changelog for package baxter_seminar
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* (Feature) Add .rviz file that does not use MoveIt.
+* (Improve) Simpler implementation of seminar.sh (depends fully on jsk_tools 1.0.66 for rosset* commands).
+* Contributors: Isaac IY Saito
+
 0.0.2 (2015-01-29)
 ------------------
 
