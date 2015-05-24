@@ -7,8 +7,8 @@ Seminar sourcecode for the Baxter (Research) Robot from Rethink Robotics
 
 Copy and paste following command to terminal.
 ```
-source /opt/ros/hydro/setup.bash
-mkdir -p ~/ros_ws/src
+source /opt/ros/indigo/setup.bash
+mkdir -p ~/catkin_ws/src
 cd ~/ros_ws
 wstool init src
 wstool merge -t src https://raw.githubusercontent.com/tork-a/baxter_seminar/master/baxter_seminar.rosinstall
