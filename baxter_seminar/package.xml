@@ -13,7 +13,8 @@
   <buildtool_depend>catkin</buildtool_depend>
 
   <run_depend>baxter_seminar_helper</run_depend>
-  <run_depend version_gte="1.0.66">jsk_tools</run_depend>
+  <run_depend>ipython</run_depend>
+  <run_depend version_gte="1.0.67">jsk_tools</run_depend>
 
   <export>
   </export>
