@@ -9,7 +9,7 @@ Copy and paste following command to terminal.
 ```
 source /opt/ros/indigo/setup.bash
 mkdir -p ~/catkin_ws/src
-cd ~/ros_ws
+cd ~/catkin_ws
 wstool init src
 wstool merge -t src https://raw.githubusercontent.com/tork-a/baxter_seminar/master/baxter_seminar.rosinstall
 wstool update -t src
@@ -22,8 +22,7 @@ You need to source setup.bash everytime you opened the terminal, For convinicenc
 
 ```
 cat <<EOF >> ~/.bashrc
-source ~/ros_ws/devel/setup.bash
-source `rospack find baxter_seminar_helper`/seminar.sh
+source ~/catkin_ws/devel/setup.bash
 EOF
 ```
 
