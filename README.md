@@ -1,7 +1,7 @@
 baxter_seminar
 ==============
 
-Seminar sourcecode for the Baxter (Research) Robot from Rethink Robotics
+Workshop sourcecode for the Baxter (Research) Robot from Rethink Robotics.
 
 ## Install
 
@@ -18,11 +18,18 @@ catkin_make
 source devel/setup.bash
 ```
 
-You need to source setup.bash everytime you opened the terminal, For convinicence you'd better to write them in your `~/.bashrc`. Be sure to replace `\RosmasterHost` with the robot's host name or IP address (ask your robot maintaner for it).
+Also, adjust your machine's time with the robot. Be sure to replace `%ROBOT_HOST%` with the robot's host name or IP address (ask your robot maintaner for it).
+
+```
+ntpdate -q %ROBOT_HOST%;
+```
+
+You need some setting for the terminals everytime you open one. For convinicence you'd better write them into your `~/.bashrc`. 
 
 ```
 $ echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
-$ echo "rossetmaster \RosmasterHost" >> ~/.bashrc
+$ echo "rossetip" >> ~/.bashrc
+$ echo "rossetmaster %ROBOT_HOST%" >> ~/.bashrc
 ```
 
 ## Build Status
