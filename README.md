@@ -18,14 +18,12 @@ catkin_make
 source devel/setup.bash
 ```
 
-You need to source setup.bash everytime you opened the terminal, For convinicence you'd better to write them in your `~/.bashrc`.
+You need to source setup.bash everytime you opened the terminal, For convinicence you'd better to write them in your `~/.bashrc`. Be sure to replace `\RosmasterHost` with the robot's host name or IP address (ask your robot maintaner for it).
 
 ```
-cat <<EOF >> ~/.bashrc
-source ~/catkin_ws/devel/setup.bash
-EOF
+$ echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
+$ echo "rossetmaster \RosmasterHost" >> ~/.bashrc
 ```
-
 
 ## Build Status
 
