@@ -4,5 +4,8 @@
     version: master
 - git:
     local-name: moveit_robots
-    uri: https://github.com/ros-planning/moveit_robots.git
-    version: master
+    # uri: https://github.com/ros-planning/moveit_robots.git
+    # version: kinetic-devel
+    # https://github.com/ros-planning/moveit_robots/pull/64
+    uri: https://github.com/k-okada/moveit_robots.git
+    version: fix_baxter_kineitc
